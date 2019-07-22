@@ -4,7 +4,7 @@
 
 First, pull the image from Docker Hub (adapt the tag if necessary):
 ```sh
-docker pull accuminium/rust-centos:7.4.1708_1.36.0
+docker pull accuminium/rust-centos:7.4.1708
 ```
 
 You can then use that image to compile Rust projects for that CentOS version.  For instance,
@@ -13,6 +13,6 @@ change to the root directory of a Cargo project and run
 docker run -t --rm \
     -v "$PWD:/source" \
     -v "$PWD/target/centos:/source/target" \
-    accuminium/rust-centos:7.4.1708_1.36.0 \
+    accuminium/rust-centos:7.4.1708 \
     cargo build --release
 ```
