@@ -7,7 +7,7 @@ RUN yum update -y && \
 ENV HOME /root
 
 WORKDIR /root
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain 1.36.0
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable
 ENV PATH /root/.cargo/bin:$PATH
 
 WORKDIR /source
