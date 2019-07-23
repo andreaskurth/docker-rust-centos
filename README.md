@@ -1,18 +1,20 @@
-# Docker Image for Rust on CentOS
+# Docker Container for Rust on CentOS
 
 ## Usage
 
-First, pull the image from Docker Hub (adapt the tag if necessary):
+You can use this container to build Cargo packages for CentOS.  Simply change to the root directory
+of a Cargo project, create an appropriate target directory
 ```sh
-docker pull accuminium/rust-centos:7.4.1708
+mkdir -p target/centos
 ```
-
-You can then use that image to compile Rust projects for that CentOS version.  For instance,
-change to the root directory of a Cargo project and run
+and invoke Cargo in the container
 ```sh
-docker run -t --rm \
+docker run \
+    --user $(id -u):$(id -g) \
+    -t --rm \
     -v "$PWD:/source" \
     -v "$PWD/target/centos:/source/target" \
     accuminium/rust-centos:7.4.1708 \
     cargo build --release
 ```
+Adapt the version of the container (`7.4.1708` in this example) as needed.
