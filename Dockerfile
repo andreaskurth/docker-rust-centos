@@ -1,4 +1,4 @@
-FROM centos:7.6.1810
+FROM centos:7.3.1611
 
 RUN yum update -y && \
     yum group install "Development Tools" -y && \
