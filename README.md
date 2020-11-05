@@ -14,7 +14,7 @@ docker run \
     -t --rm \
     -v "$PWD:/source" \
     -v "$PWD/target/centos:/source/target" \
-    accuminium/rust-centos:8.1.1911_stable \
+    accuminium/rust-centos:8.2.2004_stable \
     cargo build --release
 ```
-Adapt the version of the container (`8.1.1911_stable` in this example) as needed.
+Adapt the version of the container (`8.2.2004_stable` in this example) as needed.
