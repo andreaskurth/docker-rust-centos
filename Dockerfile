@@ -1,7 +1,6 @@
 FROM centos:7.6.1810
 
-RUN yum update -y && \
-    yum group install "Development Tools" -y && \
+RUN yum group install "Development Tools" -y && \
     yum clean all
 
 ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo
